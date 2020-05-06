@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+if git branch --show-current | grep test    #to check which branch it is .
+
+then
+
+git push -u origin test   #origin : remote repo url name    # test : branch name
+
+echo "test success"
+
+else
+
+git push -u origin master    #origin : remote repo url name    # master: default branch name
+
+echo "master success"
+
+fi
+
