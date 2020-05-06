@@ -4,7 +4,7 @@
 JOB#1
 If Developer push to dev branch then Jenkins will fetch from dev and deploy on dev-docker environment.
 
-SOLUTION:Created a job named test_server and test_env for this ,the developer when commits it pushes to github
+SOLUTION:Created a job named test_storage and test_env for this ,the developer when commits it pushes to github
            automatically using git post-commit hook and github webhook triggered job test_storage where the code is copied
            and after successfull copy the next job which is chained it with gets initiated and the docker is launched with
            the configurations  same as that of production environment and when Qat team certified it is merged using remote trigger 
@@ -14,7 +14,7 @@ JOB#2
 If Developer push to master branch then Jenkins will fetch from master and deploy on master-docke environment.
 both dev-docker and master-docker environment are on different docker containers.
 
-SOLUTION:Created a job named prod_server and prod_env for this ,the developer when commits it pushes to github
+SOLUTION:Created a job named prod_storage and prod_env for this ,the developer when commits it pushes to github
            automatically using git post-commit hook and github webhook triggered job test_storage where the code is copied
            and after successfull copy the next job which is chained it with gets initiated and the docker is launched with
            the configurations as done and is again trigerred when qat team certified the test branch code.
