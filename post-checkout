@@ -1,0 +1,12 @@
+post-checkout hook
+
+#!/usr/bin/env python
+
+import os
+
+
+
+os.system(" git pull ")
+
+os.system("git log --oneline")
+
