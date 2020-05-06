@@ -1,0 +1,50 @@
+#prod_storage configurations   [PROD_STORAGE]
+
+cp -rvf *  /prod_storage
+
+
+
+
+
+#prod_env configurations      [PROD_ENV]
+
+if sudo docker ps | grep prod_server
+then 
+sudo docker rm -f prod_server
+sudo docker run -dit -v /prod_storage:/usr/local/apache2/htdocs/   -p 8082:80 --name prod_server httpd
+else
+sudo docker run -dit -v /prod_storage:/usr/local/apache2/htdocs/   -p 8082:80 --name prod_server httpd
+fi
+
+
+
+#test_storage configurations   [TEST_STORAGE] 
+
+cp -rvf *  /test_storage      
+
+
+
+#test_env configurations      [TEST_ENV]
+
+if sudo docker ps | grep test_server
+then 
+sudo docker rm -f prod_server
+sudo docker run -dit -v /test_storage:/usr/local/apache2/htdocs/   -p 8082:80 --name test_server httpd
+else
+sudo docker run -dit -v /test_storage:/usr/local/apache2/htdocs/   -p 8082:80 --name test_server httpd
+fi
+
+
+
+
+
+#QAT_MERGE       [QAT_MERGE]
+
+URL FOR REMOTE TRIGGER : http://192.168.29.62:8080/job/QAT_merge/build?token=success
+
+
+                    format:JENKINS_URL/job/QAT_merge/build?token=TOKEN_NAME
+                    
+                    
+REFERENCE:
+[<JOBNAME>]
