@@ -38,3 +38,17 @@ git merge <branchname> ------> usually done at master branch to update it to the
                                ,so that content of feature branch is shown in the master branch.
                                
 git rebase <branchname> ---> usually done at feature branch to update it to the current head of other branch usually master
+
+
+ngrok protocol  port ----> for tunneling [private ip -----> public ip]
+
+setfacl -m u:jenkins:rwx folder/filename  -----> to grant permisiion to jesnkins user to read write and execute in the particular folder.
+
+
+TO GRANT ALL POWERS LIKE ROOT 
+-----------------------------
+
+vim /etc/sudoers +100
+jenkins ALL(=ALL)  NOPASSWD: ALL
+
+sudo -----> to tell that user u have all the powers like root user in Rhel8
