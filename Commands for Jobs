@@ -29,9 +29,9 @@ cp -rvf *  /test_storage
 if sudo docker ps | grep test_server
 then 
 sudo docker rm -f prod_server
-sudo docker run -dit -v /test_storage:/usr/local/apache2/htdocs/   -p 8082:80 --name test_server httpd
+sudo docker run -dit -v /test_storage:/usr/local/apache2/htdocs/    --name test_server httpd
 else
-sudo docker run -dit -v /test_storage:/usr/local/apache2/htdocs/   -p 8082:80 --name test_server httpd
+sudo docker run -dit -v /test_storage:/usr/local/apache2/htdocs/    --name test_server httpd
 fi
 
 
@@ -46,5 +46,6 @@ URL FOR REMOTE TRIGGER : http://192.168.29.62:8080/job/QAT_merge/build?token=suc
                     format:JENKINS_URL/job/QAT_merge/build?token=TOKEN_NAME
                     
                     
-REFERENCE:
+
 [<JOBNAME>]
+./ngrok http 8082  [tunnelling]
